@@ -26,10 +26,10 @@ class Square:
     def __init__(self,side):
         self.side=side
 
-    def area(self):
+    def area_of_square(self):
         calculate_area=(self.side)*(self.side)
         return(f"The area is {calculate_area} metres square")
-    def perimeter(self):
+    def perimeter_of_square(self):
         calculate_perimeter=(self.side)*4
         return(f"The perimeter is {calculate_perimeter} metres")
 
@@ -43,12 +43,12 @@ class Rectangle:
         self.width=width
         self.length=length
     
-    def area(self):
+    def area_of_rectangle(self):
         calculate_area= (self.width)*(self.length)
 
         return(f"The area is {calculate_area} metres square")
     
-    def perimeter(self):
+    def perimeter_of_rectangle(self):
         calculate_perimeter=2*((self.width)+(self.length))
         return(f"The perimeter is {calculate_perimeter} metres")
 
@@ -69,4 +69,4 @@ class Sphere:
     def volume(self):
         calculate_volume=4/3*(3.142*(self.radius)*(self.radius)*(self.radius))
 
-        return(f"The volume is {calculate_volume} centimetres square")
+        return(f"The volume is {calculate_volume} centimetres cubed")
