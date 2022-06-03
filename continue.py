@@ -16,3 +16,12 @@ while a<b:
     if a%2 !=0:
         continue
     print(a)
+
+
+a=1
+b=20
+while a<b:
+    a+=1
+    if a%5==0:
+        continue
+        print (a)
