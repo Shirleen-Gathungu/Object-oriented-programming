@@ -2,6 +2,7 @@
 from datetime import datetime
 from re import X
 
+
 class Account:
     def __init__(self,account_number,account_name,pin_number):
         self.account_number=account_number
@@ -9,42 +10,40 @@ class Account:
         self.pin_number=pin_number
         self.transaction_fee=100
         self.balance=0
-        self.date_time=datetime.now().strftime("%x %X")
+        self.date_time=datetime.now().strftime("%-d/%-m/%Y")
         self.full=[]
         self.loan_balance=0
         self.deposits=[]
         self.withdrawal=[]
     
     def deposit(self,amount):
-       if amount<=0:
-        return f"Insufficent funds"
+        n=datetime.now()
+        if amount<=0:
+         return f"Insufficent funds"
        
-       else:
-        self.balance+=amount
-        now=datetime.now()
-        statement={"date":now,"amount":amount,"narration":f"Hello {self.account_name} you have deposited {amount} and your balance is {self.balance}"}
-        self.deposits.append(statement)
-        self.full.append(statement)
+        else:
+            self.balance+=amount
+            statement={"date":n,"amount":amount,"narration":f"Hello {self.account_name} you have deposited {amount} and your balance is {self.balance}"}
+            self.deposits.append(statement)
+            self.full.append(statement)
         print(self.deposits)
     
         # return f"Hello {self.account_name} you have deposited {amount} and your balance is {self.balance}"
         
 
     def withdraw(self,amount):
-      
+        n=datetime.now()
         if  amount>self.balance:
              return f"Insufficient funds"
         elif amount<=0:
             return f"Amount must be greater than zero"
         else:
-            now=datetime.now()
-
-            statement={"date":now,"amount":amount,"narration":f"Hello {self.account_name} you have withdrawn {amount} and your balance is {self.balance}"}
             self.balance-=amount
+            statement={"date":n,"amount":amount,"narration":f"Hello {self.account_name} you have withdrawn {amount} and your balance is {self.balance}"}
             self.balance-=self.transaction_fee
             self.full.append(statement)
             self.withdrawal.append(statement)
-            # print(self.withdrawal)
+            print(self.withdrawal)
         # return(f"Hello {self.account_name} you have withdrawn {amount} and your balance is {self.balance}")
     
     def full_statement(self): 
